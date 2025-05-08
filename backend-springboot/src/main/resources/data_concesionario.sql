@@ -8,18 +8,18 @@ INSERT INTO usuario (id, nombre, apellidos, correo, contraseña, telefono, foto_
 (3, 'Admin', 'Admin', 'admin@concesionario.com', 'admin', '600000000', NULL, 'ADMIN');
 
 -- COCHES
-INSERT INTO coche (id, marca, modelo, año, precio_por_hora, disponibilidad, color, kilometraje, matricula, tipo, imagen) VALUES
-(1, 'Toyota', 'Corolla', 2020, 15.00, true, 'Rojo', 45000, '1234ABC', 'Sedán', NULL);
-INSERT INTO coche (id, marca, modelo, año, precio_por_hora, disponibilidad, color, kilometraje, matricula, tipo, imagen) VALUES
-(2, 'BMW', 'Serie 3', 2022, 25.00, true, 'Negro', 15000, '5678DEF', 'Sedán', NULL);
+INSERT INTO coche (id, marca, modelo, año, precio_por_dia, disponible, color, kilometraje, matricula, tipo, imagen, transmision) VALUES
+(1, 'Toyota', 'Corolla', 2020, 15.00, true, 'Rojo', 45000, '1234ABC', 'Sedán', NULL, 'AUTOMATICA');
+INSERT INTO coche (id, marca, modelo, año, precio_por_dia, disponible, color, kilometraje, matricula, tipo, imagen, transmision) VALUES
+(2, 'BMW', 'Serie 3', 2022, 25.00, true, 'Negro', 15000, '5678DEF', 'Sedán', NULL, 'MANUAL');
 
 -- MOTOS
-INSERT INTO moto (id, marca, modelo, año, precio_por_hora, disponibilidad, color, kilometraje, matricula, tipo, imagen) VALUES
-(1, 'Yamaha', 'MT-07', 2021, 10.00, true, 'Azul', 10000, 'MOTO123', 'Naked', NULL);
+INSERT INTO moto (id, marca, modelo, año, precio_por_dia, disponible, color, kilometraje, matricula, tipo, imagen, transmision) VALUES
+(1, 'Yamaha', 'MT-07', 2021, 10.00, true, 'Azul', 10000, 'MOTO123', 'Naked', NULL, 'MANUAL');
 
 -- FURGONETAS
-INSERT INTO furgoneta (id, marca, modelo, año, precio_por_hora, disponibilidad, color, kilometraje, matricula, tipo, imagen) VALUES
-(1, 'Ford', 'Transit', 2019, 20.00, true, 'Blanca', 60000, 'FURGO456', 'Carga', NULL);
+INSERT INTO furgoneta (id, marca, modelo, año, precio_por_dia, disponible, color, kilometraje, matricula, tipo, imagen, transmision) VALUES
+(1, 'Ford', 'Transit', 2019, 20.00, true, 'Blanca', 60000, 'FURGO456', 'Carga', NULL, 'AUTOMATICA');
 
 -- RESERVAS
 INSERT INTO reserva (id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total) VALUES
