@@ -4,6 +4,8 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Data
@@ -27,9 +29,11 @@ public class Usuario {
     private Rol rol;
 
     @OneToMany(mappedBy = "usuario")
+    @JsonManagedReference("usuario-reserva")
     private List<Reserva> reservas;
 
     @OneToMany(mappedBy = "usuario")
+    @JsonManagedReference("usuario-resena")
     private List<Resena> resenas;
 
     public enum Rol {

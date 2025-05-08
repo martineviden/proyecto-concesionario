@@ -23,9 +23,9 @@ INSERT INTO furgoneta (furgoneta_id, marca, modelo, ano, precio_por_dia, disponi
 -- RESERVAS
 INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total) VALUES
     (1, 1, 1, NULL, NULL, '2025-06-01', '2025-06-03', 'CONFIRMADA', 45.00);
-INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total)VALUES
+INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total) VALUES
     (2, 2, NULL, 1, NULL, '2025-06-05', '2025-06-06', 'PENDIENTE', 10.00);
-INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total)VALUES
+INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fecha_inicio, fecha_final, estado, precio_total) VALUES
     (3, 1, NULL, NULL, 1, '2025-06-10', '2025-06-11', 'CANCELADA', 20.00);
 
 -- RESENAS

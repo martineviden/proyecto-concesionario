@@ -1,6 +1,9 @@
 package com.atos.concesionario.proyecto_concesionario.Model;
 
 import lombok.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -29,6 +32,7 @@ public class Furgoneta {
     private Transmision transmision;
 
     @OneToOne(mappedBy = "furgoneta")
+    @JsonBackReference("reserva-furgoneta")
     private Reserva reserva;
 
 }

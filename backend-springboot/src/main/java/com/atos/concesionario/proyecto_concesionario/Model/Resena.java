@@ -4,6 +4,8 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -20,6 +22,7 @@ public class Resena {
     private LocalDate fecha;
 
     @ManyToOne
+    @JsonBackReference("usuario-resena")
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
     
