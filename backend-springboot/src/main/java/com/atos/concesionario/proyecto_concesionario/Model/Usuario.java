@@ -14,12 +14,12 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long usuarioId;
 
     private String nombre;
     private String apellidos;
     private String correo;
-    private String contraseña;
+    private String contrasena;
     private String telefono;
     private String fotoPerfil;
 
@@ -30,9 +30,10 @@ public class Usuario {
     private List<Reserva> reservas;
 
     @OneToMany(mappedBy = "usuario")
-    private List<Reseña> reseñas;
+    private List<Resena> resenas;
 
     public enum Rol {
         CLIENTE, ADMIN
     }
+    
 }

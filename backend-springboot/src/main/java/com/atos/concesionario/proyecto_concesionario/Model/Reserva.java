@@ -13,7 +13,12 @@ public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long reservaId;
+
+    private LocalDate fechaInicio;
+    private LocalDate fechaFinal;
+    private String estado;
+    private Double precioTotal;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -31,8 +36,4 @@ public class Reserva {
     @JoinColumn(name = "id_moto", unique = true)
     private Moto moto;
 
-    private LocalDate fechaInicio;
-    private LocalDate fechaFinal;
-    private String estado;
-    private Double precioTotal;
 }
