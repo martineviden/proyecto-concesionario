@@ -26,8 +26,13 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/v1")
 public class FurgonetaControlador {
     
+
+    private final FurgonetaServicio furgonetaServicio;
+
     @Autowired
-    FurgonetaServicio furgonetaServicio;
+    public FurgonetaControlador(FurgonetaServicio furgonetaServicio) {
+        this.furgonetaServicio = furgonetaServicio;
+    }
 
     // Endpoints CRUD
 

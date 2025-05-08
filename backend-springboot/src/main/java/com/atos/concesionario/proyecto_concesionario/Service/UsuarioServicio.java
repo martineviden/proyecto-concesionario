@@ -15,8 +15,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.UsuarioRepositor
 @Service
 public class UsuarioServicio {
     
+
+    private final UsuarioRepositorio usuarioRepositorio;
+
     @Autowired
-    UsuarioRepositorio usuarioRepositorio;
+    public UsuarioServicio(UsuarioRepositorio usuarioRepositorio) {
+        this.usuarioRepositorio = usuarioRepositorio;
+    }
 
     // Métodos CRUD
 

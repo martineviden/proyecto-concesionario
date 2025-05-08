@@ -15,8 +15,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.FurgonetaReposit
 @Service
 public class FurgonetaServicio {
     
+
+    private final FurgonetaRepositorio furgonetaRepositorio;
+
     @Autowired
-    FurgonetaRepositorio furgonetaRepositorio;
+    public FurgonetaServicio(FurgonetaRepositorio furgonetaRepositorio) {
+        this.furgonetaRepositorio = furgonetaRepositorio;
+    }
 
     // Métodos CRUD
 

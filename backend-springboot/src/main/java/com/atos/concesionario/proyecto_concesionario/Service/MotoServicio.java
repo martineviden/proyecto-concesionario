@@ -14,9 +14,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.MotoRepositorio;
 
 @Service
 public class MotoServicio {
-    
+
+    private  MotoRepositorio motoRepositorio;
+
     @Autowired
-    MotoRepositorio motoRepositorio;
+    public MotoServicio(MotoRepositorio motoRepositorio) {
+        this.motoRepositorio = motoRepositorio;
+    }
 
     // Métodos CRUD
 

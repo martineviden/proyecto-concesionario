@@ -15,8 +15,12 @@ import com.atos.concesionario.proyecto_concesionario.Repository.ResenaRepositori
 @Service
 public class ResenaServicio {
     
-    @Autowired
-    ResenaRepositorio resenaRepositorio;
+
+    private final ResenaRepositorio resenaRepositorio;
+
+    public ResenaServicio(ResenaRepositorio resenaRepositorio) {
+        this.resenaRepositorio = resenaRepositorio;
+    }
 
     // Métodos CRUD
 

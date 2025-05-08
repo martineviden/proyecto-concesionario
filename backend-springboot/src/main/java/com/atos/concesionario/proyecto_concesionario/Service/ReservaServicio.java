@@ -15,8 +15,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.ReservaRepositor
 @Service
 public class ReservaServicio {
     
+
+    private final ReservaRepositorio reservaRepositorio;
+
     @Autowired
-    ReservaRepositorio reservaRepositorio;
+    public ReservaServicio(ReservaRepositorio reservaRepositorio) {
+        this.reservaRepositorio = reservaRepositorio;
+    }
 
     // Métodos CRUD
 

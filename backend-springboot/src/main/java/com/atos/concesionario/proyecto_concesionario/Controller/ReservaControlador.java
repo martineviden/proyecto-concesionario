@@ -26,8 +26,13 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/v1")
 public class ReservaControlador {
     
+
+    private final ReservaServicio reservaServicio;
+
     @Autowired
-    ReservaServicio reservaServicio;
+    public ReservaControlador(ReservaServicio reservaServicio) {
+        this.reservaServicio = reservaServicio;
+    }
 
     // Endpoints CRUD
 

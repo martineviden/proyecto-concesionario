@@ -25,9 +25,14 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/v1")
 public class CocheControlador {
-    
+
+
+    private  final CocheServicio cocheServicio;
+
     @Autowired
-    CocheServicio cocheServicio;
+    public CocheControlador(CocheServicio cocheServicio) {
+        this.cocheServicio = cocheServicio;
+    }
 
     // Endpoints CRUD
 

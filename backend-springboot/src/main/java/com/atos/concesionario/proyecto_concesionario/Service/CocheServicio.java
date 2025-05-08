@@ -14,9 +14,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.CocheRepositorio
 
 @Service
 public class CocheServicio {
-    
+
+    private final CocheRepositorio cocheRepositorio;
+
     @Autowired
-    CocheRepositorio cocheRepositorio;
+    public CocheServicio(CocheRepositorio cocheRepositorio) {
+        this.cocheRepositorio = cocheRepositorio;
+    }
 
     // Métodos CRUD
 

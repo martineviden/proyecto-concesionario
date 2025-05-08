@@ -26,8 +26,13 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/v1")
 public class UsuarioControlador {
     
+
+    private final UsuarioServicio usuarioServicio;
+
     @Autowired
-    UsuarioServicio usuarioServicio;
+    public UsuarioControlador(UsuarioServicio usuarioServicio) {
+        this.usuarioServicio = usuarioServicio;
+    }
 
     // Endpoints CRUD
 

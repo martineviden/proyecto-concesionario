@@ -25,9 +25,13 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/v1")
 public class ResenaControlador {
-    
+
+    private final ResenaServicio resenaServicio;
+
     @Autowired
-    ResenaServicio resenaServicio;
+    public ResenaControlador(ResenaServicio resenaServicio) {
+        this.resenaServicio = resenaServicio;
+    }
 
     // Endpoints CRUD
 
