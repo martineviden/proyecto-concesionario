@@ -18,6 +18,7 @@ public class ResenaServicio {
 
     private final ResenaRepositorio resenaRepositorio;
 
+    @Autowired
     public ResenaServicio(ResenaRepositorio resenaRepositorio) {
         this.resenaRepositorio = resenaRepositorio;
     }
