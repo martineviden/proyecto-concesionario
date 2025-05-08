@@ -2,31 +2,31 @@
 
 ### Frontend 
 
-Visual Studio Code 
-Angular `17.3.17`
-Node `20.19.1` (compatible con Angular 17) 
-Bootstrap 
+Visual Studio Code  
+Angular `17.3.17`  
+Node `20.19.1` (compatible con Angular 17)  
+Bootstrap
 
 ### Backend 
 
-Eclipse 
-JDK17 
-SpringBoot `3.4.5` 
-Hibernate 
-JWT 
-Maven 
-Xampp 
+Eclipse  
+JDK17  
+SpringBoot `3.4.5`  
+Hibernate  
+JWT  
+Maven  
+Xampp  
 
 ### Tests
 
-JUnit 
-Mockito 
-Postman 
+JUnit  
+Mockito  
+Postman
 
 ### Otras herramientas
 
-GitHub 
-Trello 
+GitHub  
+Trello  
 
 ## Comandos Git
 
