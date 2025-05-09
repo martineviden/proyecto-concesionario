@@ -42,8 +42,8 @@ public class ReservaServicio {
     public ResponseEntity<Reserva> actualizarReserva(Long reservaId, Reserva reservaDetalles) throws ResourceNotFoundException {
         Reserva reserva = reservaRepositorio.findById(reservaId).orElseThrow(() -> new ResourceNotFoundException("Reserva con id " + reservaId + " no encontrada"));
 
-        reserva.setFechaInicio(reservaDetalles.getFechaInicio());
-        reserva.setFechaFinal(reservaDetalles.getFechaFinal());
+        reserva.setFechaReserva(reservaDetalles.getFechaReserva());
+        reserva.setDiasReserva(reservaDetalles.getDiasReserva());
         reserva.setEstado(reservaDetalles.getEstado());
         reserva.setPrecioTotal(reservaDetalles.getPrecioTotal());
         reserva.setUsuario(reservaDetalles.getUsuario());

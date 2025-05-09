@@ -42,6 +42,7 @@ public class UsuarioServicio {
     public ResponseEntity<Usuario> actualizarUsuario(Long usuarioId, Usuario usuarioDetalles) throws ResourceNotFoundException {
         Usuario usuario = usuarioRepositorio.findById(usuarioId).orElseThrow(() -> new ResourceNotFoundException("Usuario con id " + usuarioId + " no encontrado"));
 
+        usuario.setDni(usuarioDetalles.getDni());
         usuario.setNombre(usuarioDetalles.getNombre());
         usuario.setApellidos(usuarioDetalles.getApellidos());
         usuario.setCorreo(usuarioDetalles.getCorreo());

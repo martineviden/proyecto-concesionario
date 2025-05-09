@@ -18,8 +18,8 @@ public class Reserva {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservaId;
 
-    private LocalDate fechaInicio;
-    private LocalDate fechaFinal;
+    private LocalDate fechaReserva;
+    private int diasReserva;
     private String estado;
     private Double precioTotal;
 
