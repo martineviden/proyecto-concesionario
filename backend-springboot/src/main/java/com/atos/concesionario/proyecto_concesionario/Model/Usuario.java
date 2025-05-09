@@ -38,7 +38,8 @@ public class Usuario {
     private List<Resena> resenas;
 
     public enum Rol {
-        CLIENTE, ADMIN
+        CLIENTE,
+        ADMIN
     }
     
 }

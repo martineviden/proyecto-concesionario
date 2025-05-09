@@ -20,7 +20,10 @@ public class Reserva {
 
     private LocalDate fechaReserva;
     private int diasReserva;
-    private String estado;
+
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
+
     private Double precioTotal;
 
     @ManyToOne
@@ -42,5 +45,11 @@ public class Reserva {
     @JsonManagedReference("reserva-moto")
     @JoinColumn(name = "id_moto", unique = true)
     private Moto moto;
+
+    public enum Estado {
+        CONFIRMADA,
+        PENDIENTE,
+        CANCELADA
+    }
 
 }
