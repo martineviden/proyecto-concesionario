@@ -21,9 +21,9 @@ public class Resena {
     private int puntuacion;
     private LocalDate fecha;
 
-    @ManyToOne
-    @JsonBackReference("usuario-resena")
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    @OneToOne
+    @JsonBackReference("reserva-resena")
+    @JoinColumn(name = "id_reserva")
+    private Reserva reserva;
     
 }

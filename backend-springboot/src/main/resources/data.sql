@@ -29,9 +29,9 @@ INSERT INTO reserva (reserva_id, id_usuario, id_coche, id_moto, id_furgoneta, fe
     (3, 1, NULL, NULL, 1, '2025-06-10', 2, 'CANCELADA', 20.00);
 
 -- RESENAS
-INSERT INTO resena (resena_id, id_usuario, texto, puntuacion, fecha) VALUES
+INSERT INTO resena (resena_id, id_reserva, texto, puntuacion, fecha) VALUES
     (1, 1, 'Muy buen servicio y atencion.', 5, '2025-06-04');
-INSERT INTO resena (resena_id, id_usuario, texto, puntuacion, fecha) VALUES
+INSERT INTO resena (resena_id, id_reserva, texto, puntuacion, fecha) VALUES
     (2, 2, 'La moto estaba en perfectas condiciones.', 4, '2025-06-07');
-INSERT INTO resena (resena_id, id_usuario, texto, puntuacion, fecha) VALUES
-    (3, 1, 'La furgoneta tenia demasiados kilometros.', 3, '2025-06-12');
+INSERT INTO resena (resena_id, id_reserva, texto, puntuacion, fecha) VALUES
+    (3, 3, 'La furgoneta tenia demasiados kilometros.', 3, '2025-06-12');

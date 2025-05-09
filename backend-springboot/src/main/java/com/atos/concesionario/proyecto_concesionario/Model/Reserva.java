@@ -46,6 +46,11 @@ public class Reserva {
     @JoinColumn(name = "id_moto", unique = true)
     private Moto moto;
 
+    @OneToOne
+    @JsonManagedReference("reserva-resena")
+    @JoinColumn(name = "id_resena", unique = true)
+    private Resena resena;
+
     public enum Estado {
         CONFIRMADA,
         PENDIENTE,

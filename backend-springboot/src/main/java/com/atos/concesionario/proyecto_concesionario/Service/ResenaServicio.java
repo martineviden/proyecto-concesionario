@@ -45,7 +45,7 @@ public class ResenaServicio {
         resena.setTexto(resenaDetalles.getTexto());
         resena.setPuntuacion(resenaDetalles.getPuntuacion());
         resena.setFecha(resenaDetalles.getFecha());
-        resena.setUsuario(resenaDetalles.getUsuario());
+        resena.setReserva(resenaDetalles.getReserva());
 
         final Resena resenaActualizada = resenaRepositorio.save(resena);
         return ResponseEntity.ok(resenaActualizada);

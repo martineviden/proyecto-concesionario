@@ -50,6 +50,7 @@ public class ReservaServicio {
         reserva.setCoche(reservaDetalles.getCoche());
         reserva.setFurgoneta(reservaDetalles.getFurgoneta());
         reserva.setMoto(reservaDetalles.getMoto());
+        reserva.setResena(reservaDetalles.getResena());
 
         final Reserva reservaActualizada = reservaRepositorio.save(reserva);
         return ResponseEntity.ok(reservaActualizada);

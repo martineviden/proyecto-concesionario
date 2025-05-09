@@ -33,10 +33,6 @@ public class Usuario {
     @JsonManagedReference("usuario-reserva")
     private List<Reserva> reservas;
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonManagedReference("usuario-resena")
-    private List<Resena> resenas;
-
     public enum Rol {
         CLIENTE,
         ADMIN
