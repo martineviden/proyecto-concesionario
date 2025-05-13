@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<proyecto_concesionario>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.atos.concesionario.proyecto_concesionario.Application",
+            "projectName": "proyecto_concesionario",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

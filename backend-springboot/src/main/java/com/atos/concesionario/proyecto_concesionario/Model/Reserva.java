@@ -4,7 +4,11 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+
 @Entity
+@Table(name = "reserva")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,23 +20,20 @@ public class Reserva {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "matricula", nullable = false)
+    private Vehiculo vehiculo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    @OneToOne
-    @JoinColumn(name = "id_coche", unique = true)
-    private Coche coche;
+    @Column(name = "fecha_reserva", nullable = false)
+    private LocalDate fechaReserva;
 
-    @OneToOne
-    @JoinColumn(name = "id_furgoneta", unique = true)
-    private Furgoneta furgoneta;
+    @Column(name = "dias_reserva", nullable = false)
+    private Integer diasReserva;
 
-    @OneToOne
-    @JoinColumn(name = "id_moto", unique = true)
-    private Moto moto;
+    @Column(nullable = false)
+    private Double precio;
 
-    private LocalDate fechaInicio;
-    private LocalDate fechaFinal;
-    private String estado;
-    private Double precioTotal;
 }
