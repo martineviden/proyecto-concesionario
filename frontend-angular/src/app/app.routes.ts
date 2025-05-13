@@ -4,7 +4,7 @@ import  {ResenasComponent} from './pages/resenas/resenas.component'
 import  {LoginComponent} from './pages/login/login.component'
 import { AdminComponent } from './pages/admin/admin.component'
 import { RegistrarComponent } from './pages/registrar/registrar.component';
-import { ReservacionesComponent } from './pages/reservaciones/reservaciones.component';
+import { ReservacionesComponent } from './pages/reservas/reservaciones.component';
 
 export const routes: Routes = [
     {path: 'vehiculos',component: VehiculosComponent},
@@ -15,4 +15,4 @@ export const routes: Routes = [
     {path: 'reservaciones', component: ReservacionesComponent}
 
     
-];
+]
