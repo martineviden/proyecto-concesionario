@@ -1,12 +1,4 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './shared/components/login/login.component';
-import { RegistrarseComponent } from './shared/components/registrarse/registrarse.component';
-import { VehiculosComponent } from './shared/components/vehiculos/vehiculos.component';
-import { TipoVehiculoComponent } from './shared/components/tipo-vehiculo/tipo-vehiculo.component';
-import { ReservaFormComponent } from './shared/components/reserva-form/reserva-form.component';
-import { MisReservasComponent } from './shared/components/mis-reservas/mis-reservas.component';
-import { AdminReservasComponent } from './shared/components/admin-reservas/admin-reservas.component';
-import { ResenaFormComponent } from './shared/components/resena-form/resena-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'vehiculos', pathMatch: 'full' },
@@ -21,3 +13,4 @@ export const routes: Routes = [
   
 
 ];
+
