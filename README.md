@@ -3,8 +3,8 @@
 ### Frontend 
 
 Visual Studio Code  
-Angular `17.3.17`  
-Node `20.19.1` (compatible con Angular 17)  
+Angular `19.2.8`  
+Node `20.19.1` (compatible con Angular 19)  
 Bootstrap
 
 ### Backend 
