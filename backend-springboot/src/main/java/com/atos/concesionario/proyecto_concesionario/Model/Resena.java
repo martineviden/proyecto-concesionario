@@ -28,15 +28,6 @@ public class Resena {
     @Column(name = "fecha", nullable = false)
     private LocalDate fecha;
 
-
-    @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name = "matricula", nullable = false)
-    private Vehiculo vehiculo;
-
     @OneToOne
     @JsonBackReference("reserva-resena")
     @JoinColumn(name = "id_reserva")
