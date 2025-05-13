@@ -27,9 +27,6 @@ public class VehiculoServicio {
         return vehiculoRepositorio.findAll();
     }
 
-    public List<Vehiculo> obtenerVehiculosDisponibles() {
-        return vehiculoRepositorio.findByDisponibilidadTrue();
-    }
 
     public ResponseEntity<Vehiculo> obtenerVehiculoPorMatricula(String matricula) throws ResourceNotFoundException {
         Vehiculo vehiculo = vehiculoRepositorio.findById(matricula)
@@ -73,13 +70,8 @@ public class VehiculoServicio {
         return respuesta;
     }
 
-    public List<Vehiculo> obtenerVehiculosPorTipo(TipoVehiculo.Tipo tipo) {
-        return vehiculoRepositorio.findByTipoVehiculoTipo(tipo);
-    }
 
-    public List<Vehiculo> buscarVehiculosPorMarca(String marca) {
-        return vehiculoRepositorio.findByMarcaContainingIgnoreCase(marca);
-    }
+
     
     // Métodos adicionales podrían incluir:
     // - Buscar vehículos por rango de precio
