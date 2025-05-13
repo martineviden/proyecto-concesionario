@@ -48,7 +48,6 @@ public class UsuarioServicio {
         usuario.setCorreo(usuarioDetalles.getCorreo());
         usuario.setContrasena(usuarioDetalles.getContrasena());
         usuario.setTelefono(usuarioDetalles.getTelefono());
-        usuario.setFotoPerfil(usuarioDetalles.getFotoPerfil());
         usuario.setRol(usuarioDetalles.getRol());
 
         final Usuario usuarioActualizado = usuarioRepositorio.save(usuario);

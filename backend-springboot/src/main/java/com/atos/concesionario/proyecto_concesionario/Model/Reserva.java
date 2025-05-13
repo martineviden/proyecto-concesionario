@@ -4,10 +4,11 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+
 @Entity
+@Table(name = "reserva")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,45 +17,23 @@ public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reservaId;
-
-    private LocalDate fechaReserva;
-    private int diasReserva;
-
-    @Enumerated(EnumType.STRING)
-    private Estado estado;
-
-    private Double precioTotal;
+    private Long id;
 
     @ManyToOne
-    @JsonBackReference("usuario-reserva")
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "matricula", nullable = false)
+    private Vehiculo vehiculo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    @OneToOne
-    @JsonManagedReference("reserva-coche")
-    @JoinColumn(name = "id_coche", unique = true)
-    private Coche coche;
+    @Column(name = "fecha_reserva", nullable = false)
+    private LocalDate fechaReserva;
 
-    @OneToOne
-    @JsonManagedReference("reserva-furgoneta")
-    @JoinColumn(name = "id_furgoneta", unique = true)
-    private Furgoneta furgoneta;
+    @Column(name = "dias_reserva", nullable = false)
+    private Integer diasReserva;
 
-    @OneToOne
-    @JsonManagedReference("reserva-moto")
-    @JoinColumn(name = "id_moto", unique = true)
-    private Moto moto;
-
-    @OneToOne
-    @JsonManagedReference("reserva-resena")
-    @JoinColumn(name = "id_resena", unique = true)
-    private Resena resena;
-
-    public enum Estado {
-        CONFIRMADA,
-        PENDIENTE,
-        CANCELADA
-    }
+    @Column(nullable = false)
+    private Double precio;
 
 }

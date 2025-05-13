@@ -1,11 +1,8 @@
 package com.atos.concesionario.proyecto_concesionario.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.atos.concesionario.proyecto_concesionario.Exception.ResourceNotFoundException;
@@ -14,7 +11,6 @@ import com.atos.concesionario.proyecto_concesionario.Repository.ReservaRepositor
 
 @Service
 public class ReservaServicio {
-    
 
     private final ReservaRepositorio reservaRepositorio;
 
@@ -23,48 +19,29 @@ public class ReservaServicio {
         this.reservaRepositorio = reservaRepositorio;
     }
 
-    // Métodos CRUD
-
-    public List<Reserva> obtenerReservas() {
+    public List<Reserva> obtenerTodasReservas() {
         return reservaRepositorio.findAll();
     }
 
-    public ResponseEntity<Reserva> obtenerReservaPorId(Long reservaId) throws ResourceNotFoundException {
-        Reserva reserva = reservaRepositorio.findById(reservaId).orElseThrow(() -> new ResourceNotFoundException("Reserva con id " + reservaId + " no encontrada"));
-
-        return ResponseEntity.ok().body(reserva);
+    public Reserva obtenerReservaPorId(Long id) throws ResourceNotFoundException {
+        return reservaRepositorio.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Reserva no encontrada"));
     }
 
     public Reserva crearReserva(Reserva reserva) {
         return reservaRepositorio.save(reserva);
     }
 
-    public ResponseEntity<Reserva> actualizarReserva(Long reservaId, Reserva reservaDetalles) throws ResourceNotFoundException {
-        Reserva reserva = reservaRepositorio.findById(reservaId).orElseThrow(() -> new ResourceNotFoundException("Reserva con id " + reservaId + " no encontrada"));
-
+    public Reserva actualizarReserva(Long id, Reserva reservaDetalles) throws ResourceNotFoundException {
+        Reserva reserva = obtenerReservaPorId(id);
+        // Actualizar campos
         reserva.setFechaReserva(reservaDetalles.getFechaReserva());
         reserva.setDiasReserva(reservaDetalles.getDiasReserva());
-        reserva.setEstado(reservaDetalles.getEstado());
-        reserva.setPrecioTotal(reservaDetalles.getPrecioTotal());
-        reserva.setUsuario(reservaDetalles.getUsuario());
-        reserva.setCoche(reservaDetalles.getCoche());
-        reserva.setFurgoneta(reservaDetalles.getFurgoneta());
-        reserva.setMoto(reservaDetalles.getMoto());
-        reserva.setResena(reservaDetalles.getResena());
-
-        final Reserva reservaActualizada = reservaRepositorio.save(reserva);
-        return ResponseEntity.ok(reservaActualizada);
+        return reservaRepositorio.save(reserva);
     }
 
-    public Map<String, Boolean> eliminarReserva(Long reservaId) throws ResourceNotFoundException {
-        Reserva reserva = reservaRepositorio.findById(reservaId).orElseThrow(() -> new ResourceNotFoundException("Reserva con id " + reservaId + " no encontrada"));
+    public void eliminarReserva(Long id) throws ResourceNotFoundException {
+        Reserva reserva = obtenerReservaPorId(id);
         reservaRepositorio.delete(reserva);
-
-        Map<String, Boolean> respuesta = new HashMap<>();
-        respuesta.put("Reserva eliminada", Boolean.TRUE);
-        return respuesta;
     }
-
-    // Otros métodos
-
 }

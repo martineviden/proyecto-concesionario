@@ -8,34 +8,48 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
+@Table(name = "usuario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Usuario {
 
+    public enum Rol {
+        CLIENTE, ADMIN
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long usuarioId;
+    @Column(name = "id_usuario")
+    private Long id;
 
-    private String dni;
+    @Column(nullable = false, unique = true)
+    private String dni; // Debería almacenarse cifrado
+
+    @Column(nullable = false)
     private String nombre;
+
     private String apellidos;
+
+    @Column(nullable = false, unique = true)
     private String correo;
-    private String contrasena;
+
+    @Column(nullable = false)
+    private String contrasena; // Debería almacenarse cifrado
+
     private String telefono;
-    private String fotoPerfil;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Rol rol;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     @JsonManagedReference("usuario-reserva")
     private List<Reserva> reservas;
 
-    public enum Rol {
-        CLIENTE,
-        ADMIN
-    }
-    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonManagedReference("usuario-resena")
+    private List<Resena> resenas;
+
 }
