@@ -18,5 +18,6 @@ export const routes: Routes = [
   { path: 'mis-reservas', component: MisReservasComponent },
   { path: 'admin/reservas', component: AdminReservasComponent },
   { path: 'resena-form', component: ResenaFormComponent}
+  
 
 ];
