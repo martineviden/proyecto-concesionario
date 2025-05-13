@@ -15,12 +15,13 @@ import com.atos.concesionario.proyecto_concesionario.Repository.UsuarioRepositor
 @Service
 public class UsuarioServicio {
     
-
+    private final PasswordEncoder passwordEncoder;
     private final UsuarioRepositorio usuarioRepositorio;
 
     @Autowired
-    public UsuarioServicio(UsuarioRepositorio usuarioRepositorio) {
+    public UsuarioServicio(UsuarioRepositorio usuarioRepositorio, PasswordEncoder passwordEncoder) {
         this.usuarioRepositorio = usuarioRepositorio;
+        this.passwordEncoder = passwordEncoder;
     }
 
     // Métodos CRUD
@@ -36,6 +37,12 @@ public class UsuarioServicio {
     }
 
     public Usuario crearUsuario(Usuario usuario) {
+        // Hashear dni y contraseña antes de guardar
+        String dniHasheado = passwordEncoder.encode(usuario.getDni());
+        String contrasenaHasheada = passwordEncoder.encode(usuario.getContrasena());
+
+        usuario.setDni(dniHasheado);
+        usuario.setContrasena(contrasenaHasheada);
         return usuarioRepositorio.save(usuario);
     }
 
